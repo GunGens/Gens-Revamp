@@ -35,7 +35,7 @@ public class Main extends JavaPlugin {
         this.getConfig().options().copyDefaults(true);
         this.saveDefaultConfig();
         this.getCommand("generator").setExecutor(new GenCommand());
-        this.getCommand("generator").setExecutor(new ReloadCommand());
+        //this.getCommand("generator").setExecutor(new ReloadCommand());
         this.getCommand("generator").setTabCompleter(new GenTabComplete());
         this.getServer().getPluginManager().registerEvents(new Events(), this);
         AtomicDouble t = new AtomicDouble(0.0D);

@@ -8,6 +8,8 @@ package me.ggens;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+
+import org.bukkit.Material;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
 import org.bukkit.command.TabCompleter;
@@ -27,11 +29,15 @@ public class GenTabComplete implements TabCompleter {
             StringUtil.copyPartialMatches(args[0], commands, completions);
             break;
             case 2:
-                commands.add("STONE");
+                for (Material Mat : Material.values()) {
+                    commands.add(Mat.name());
+                }
                 StringUtil.copyPartialMatches(args[1], commands, completions);
                 break;
             case 3:
-                commands.add("STONE");
+                for (Material Mat : Material.values()) {
+                    commands.add(Mat.name());
+                }
                 StringUtil.copyPartialMatches(args[2], commands, completions);
                 break;
         }

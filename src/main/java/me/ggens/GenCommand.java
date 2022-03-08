@@ -36,10 +36,12 @@ public class GenCommand implements CommandExecutor {
         if (cmd.getName().equalsIgnoreCase("generator")) {
             if (sender instanceof Player && sender.isOp()) {
                 Player p = (Player) sender;
+                p.sendMessage("Generator command");
                 if (args.length == 0) {
                     p.sendMessage(ChatColor.GREEN + "Command Usage: /generator <create> <item> <block> \n item is the item the generator will drop.\n block is the block that the generator will be.");
                 }
                 if (args[0].toLowerCase().contains("create")) {
+                    p.sendMessage("Create");
                     String item = args[1];
                     String block = args[2];
                     AtomicInteger gItemCount = new AtomicInteger(1);
@@ -73,6 +75,24 @@ public class GenCommand implements CommandExecutor {
 
             }
 
+        }
+        if (cmd.getName().equalsIgnoreCase("generator")) {
+            if (args[0].equalsIgnoreCase("reload")) {
+                if (sender instanceof Player) {
+                    if (sender.isOp()) {
+
+                        Main.INSTANCE.reloadConfig();
+                        sender.sendMessage(ChatColor.RED + "Generators have been reloaded");
+                        return true;
+                    }
+                } else if (!(sender instanceof Player)) {
+                    Main.INSTANCE.reloadConfig();
+                    sender.sendMessage(ChatColor.RED + "Generators have been reloaded");
+                    return true;
+                }
+                return false;
+            }
+            return false;
         }
         return true;
     }
