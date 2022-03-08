@@ -1,0 +1,10 @@
+name: GGens
+version: 1.0-SNAPSHOT
+main: me.ggens.Main
+api-version: 1.17
+authors: [ ZachK, PXXD ]
+description: Gens for gungenns
+commands:
+  generator:
+    description: Generator command
+    usage: /<command> <material> <material>

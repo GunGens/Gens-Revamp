@@ -1,0 +1,10 @@
+name: GGens
+version: ${project.version}
+main: me.ggens.Main
+api-version: 1.18
+authors: [ ZachK, PXXD ]
+description: Gens for gungenns
+commands:
+  generator:
+    description: Generator command
+    usage: /<command> <material> <material>
